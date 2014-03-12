@@ -3,6 +3,7 @@ pageable: true
 ---
 
 ruby:
+  page_type ||= nil
   period = case page_type
     when 'day'
       Date.new(year, month, day).strftime('%b %e %Y')
