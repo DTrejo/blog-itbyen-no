@@ -1,6 +1,7 @@
 require 'lib/sass_css_import'
 require 'lib/date_time_helpers'
 helpers DateTimeHelpers
+require 'addressable/uri'
 
 Time.zone = 'Europe/Madrid'
 
@@ -194,6 +195,18 @@ helpers do
       ga('create', '#{google_analytics_account_id}', '#{URI(data.urls.root).host}');
       ga('send', 'pageview');
     JS
+  end
+
+  def append_params(url, params)
+    uri              = Addressable::URI.parse(url)
+    uri.query_values = (uri.query_values || {}).merge(params)
+    uri.to_s
+  end
+
+  def icon(*keys)
+    attr = keys.extract_options!
+    attr[:class] = (Array(attr[:class] || []) + ['fa'] + keys.map { |k| "fa-#{ERB::Util.html_escape(k)}" }).uniq * ' '
+    %Q(<i #{attr_to_s attr}></i>).strip.html_safe
   end
 end
 

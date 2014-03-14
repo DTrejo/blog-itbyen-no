@@ -4,7 +4,7 @@ gem 'middleman', '~> 3.1.4'
 gem 'middleman-blog', '~> 3.2.0'
 gem 'middleman-smusher'
 gem 'middleman-syntax'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', git: "https://github.com/twbs/bootstrap-sass"
 gem 'slim'
 gem 'middleman-autoprefixer'
 
@@ -17,3 +17,4 @@ gem 'builder', '~> 3.0.0'
 
 gem 'middleman-gh-pages'
 gem 'byebug', platforms: :ruby_20
+gem 'addressable'

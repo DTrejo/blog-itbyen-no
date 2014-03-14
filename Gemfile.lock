@@ -1,9 +1,17 @@
+GIT
+  remote: https://github.com/twbs/bootstrap-sass
+  revision: 1f6ab21fa9719dc20e8eeac602ad8168cfb8d8aa
+  specs:
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
     activesupport (3.2.17)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    addressable (2.3.5)
     autoprefixer-rails (0.8.20131213)
       execjs
     better_errors (1.1.0)
@@ -11,8 +19,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.0)
-      sass (~> 3.2)
     builder (3.0.4)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -136,9 +142,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass!
   builder (~> 3.0.0)
   byebug
   middleman (~> 3.1.4)

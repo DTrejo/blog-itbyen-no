@@ -1,0 +1,16 @@
+nav.navbar.navbar-default.navbar-static-top: .container
+  .navbar-header
+    button.navbar-toggle type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    - if (main_project_url = data.urls.main_project)
+      a.navbar-brand href=main_project_url
+  .collapse.navbar-collapse
+    ul.navbar-nav.nav
+      li
+        a href='/' Blogg
+    ul.navbar-nav.nav.navbar-right
+      li
+        a href="https://twitter.com/itbyen" #{icon 'twitter', 'inline'} Følg Itbyen på Twitter
