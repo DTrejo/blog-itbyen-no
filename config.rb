@@ -1,3 +1,5 @@
+require 'builder' # for sitemap
+
 require 'lib/sass_css_import'
 require 'lib/date_time_helpers'
 helpers DateTimeHelpers
@@ -30,8 +32,10 @@ activate :blog do |blog|
 end
 
 page '/feed.xml', :layout => false
+page '/sitemap.xml', :layout => false
+page '/sitemap.html', :layout => false
 
-### 
+###
 # Compass
 ###
 
@@ -49,13 +53,13 @@ page '/feed.xml', :layout => false
 ###
 
 # Per-page layout changes:
-# 
+#
 # With no layout
 # page "/path/to/file.html", :layout => false
-# 
+#
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
-# 
+#
 # A path which all have the same layout
 # with_layout :admin do
 #   page "/admin/*"
