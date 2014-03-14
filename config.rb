@@ -1,5 +1,3 @@
-require 'builder' # for sitemap
-
 require 'lib/sass_css_import'
 require 'lib/date_time_helpers'
 helpers DateTimeHelpers
