@@ -30,6 +30,8 @@ activate :blog do |blog|
   blog.default_extension = '.html.markdown.erb'
 end
 
+activate :directory_indexes # for pretty urls. Has to be after activate :blog
+
 page '/feed.xml', :layout => false
 page '/sitemap.xml', :layout => false
 page '/sitemap.html', :layout => false
