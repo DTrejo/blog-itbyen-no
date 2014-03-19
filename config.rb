@@ -10,7 +10,7 @@ activate :syntax
 # Blog settings
 activate :blog do |blog|
   # blog.prefix  = 'blog'
-  blog.permalink         = ':year/:month/:day/:title'
+  blog.permalink         = ':title'
   blog.sources           = ':year-:month-:day-:title'
   blog.taglink           = 'tags/:tag.html'
   blog.layout            = 'article_layout'
@@ -29,8 +29,6 @@ activate :blog do |blog|
   blog.calendar_template = 'calendar.html'
   blog.default_extension = '.html.markdown.erb'
 end
-
-activate :directory_indexes # for pretty urls. Has to be after activate :blog
 
 page '/feed.xml', :layout => false
 page '/sitemap.xml', :layout => false
