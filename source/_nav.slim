@@ -5,8 +5,15 @@ nav.navbar.navbar-default.navbar-static-top: .container
       span.icon-bar
       span.icon-bar
       span.icon-bar
-    - if (main_project_url = data.urls.main_project)
-      a.navbar-brand href=main_project_url
+    - main_project_url = data.urls.main_project
+    - # if there's an article, then the article's title is an h1; dont double-up
+    - if (current_article.nil?)
+      h1
+        a.navbar-brand href=main_project_url dtrejo.com
+    - else
+      h2
+        a.navbar-brand href=main_project_url dtrejo.com
+
   .collapse.navbar-collapse
     ul.navbar-nav.nav
       li
