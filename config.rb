@@ -3,6 +3,8 @@ require 'lib/date_time_helpers'
 helpers DateTimeHelpers
 require 'addressable/uri'
 
+# TODO
+# Time.zone = 'America/Los_Angeles'
 Time.zone = 'Europe/Madrid'
 
 activate :syntax
@@ -145,7 +147,7 @@ helpers do
   end
 
   def suggest_edit_article_url(article)
-    src_path = "source/#{article.path}.markdown.erb"
+    src_path = "#{article.path}.markdown.erb"
     "#{data.urls.source}/blob/master/#{src_path}"
   end
 
