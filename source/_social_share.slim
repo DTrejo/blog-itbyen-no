@@ -5,3 +5,7 @@
     li: a.social href=append_params('https://www.linkedin.com/cws/share', url: article_url(current_article)) target="_blank" #{icon 'linkedin', 'inline'}
     li: a.social href=append_params('https://www.facebook.com/sharer/sharer.php', u: article_url(current_article)) target="_blank" #{icon 'facebook', 'inline'}
     li: a.social href=append_params('https://plus.google.com/share', url: article_url(current_article)) target="_blank" #{icon 'google-plus', 'inline'}
+    li.pull-right
+      .suggest-edit
+        a.social href=suggest_edit_article_url(current_article)
+          | #{glyphicon 'edit'} Suggest edit
