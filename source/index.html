@@ -6,7 +6,7 @@
 <title>David Trejo | Developer and Student</title>
 
 <meta name="author" content="David Trejo">
-<meta name="copyright" content="Copyright 2009-2011 David Trejo">
+<meta name="copyright" content="Copyright 2009-2014 David Trejo">
 <meta name="keywords" content="David, Trejo, developer, programmer, student.">
 <meta name="description" content="Website of David Trejo, student and developer.">
 <link rel="canonical" href="http://dtrejo.com/">
@@ -206,7 +206,7 @@
     <div class="container">
       <div id="contact" class="prepend-4 span-8">
         <em>Find me</em><br><br>
-        <a href="http://dtrejo.com/blog">Blog</a><br>
+        <a href="/blog.html">Blog</a><br>
         <a href="http://github.com/DTrejo">Github</a><br>
         <a href="http://twitter.com/ddtrejo">Twitter</a><br>
         <a id="email" title="david at this domain">Email</a><br><br>
@@ -221,7 +221,7 @@
         <a href="https://github.com/DTrejo/rotten">rotten (for git repos)</a>
       </div>
     </div>
-    <span class="fin"><a href="404.html">fin</a></span>
+    <span class="fin"><a href="/404.html">fin</a></span>
   </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -231,11 +231,11 @@
       $('.frontpage a').smoothScroll();
 
       // Show email to humans.
-      var me = 'david'
-        , atDomain = '@dtrejo.com';
+      var me = 'david';
+      var atDomain = '@dtrejo.com';
       $('a#email').click(function() {
         $(this)
-          .attr('href', 'mailto:' + me + atDomain)
+          .attr('href', 'mailto:' + me + atDomain + '?Subject=Wow I love you')
           .text(me + atDomain);
       });
     });
