@@ -217,6 +217,13 @@ helpers do
     summary
   end
 
+  # TODO use a real HTML stripper; this breaks on posts all over the place
+  def remove_html(text)
+    text
+      .gsub(/<\/?.*>/, '')
+      .split().join(' ')
+  end
+
 end
 
 set :css_dir, 'stylesheets'
