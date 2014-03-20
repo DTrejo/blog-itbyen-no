@@ -5,6 +5,18 @@
 //@import 'syntax-highlight'
 //@import 'fonts'
 
+body
+  font-family: "AdobeGaramondPremierPro", "Hoefler Text", Palatino, "Palatino Linotype", serif
+  color: $body-color
+  background: $body-bg url('../images/bg7.jpg')
+  text-rendering: optimizeLegibility
+
+.navbar
+  box-shadow: inset 0 -20px 15px -20px #000
+  font-size: 2rem
+  line-height: 3.1rem
+  border-bottom: 1px solid $navbar-default-color
+
 .navbar-header h1,
 .navbar-header h2
   font-size: 100%
@@ -12,7 +24,7 @@
   margin: 0
 
 .navbar a.navbar-brand
-  width: 120px
+  width: 160px
   height: 60px
 
 //** container
@@ -24,30 +36,35 @@
 
 .articles .article
   margin-bottom: 6.4rem
+.articles .article:last-child
+  margin-bottom: 0
 
 .article-title
-  margin: 0 0 0.8rem 0
-  font-size: 3.2rem
+  margin: 0 0 1.6rem 0
+  font-size: 4.8rem
 
 .article-title,
 .article-title a
-  color: $gray
+  color: $body-color
 
 .article-date
   @extend .lead
   margin-bottom: 1.6rem
-  color: $gray-light
+  color: rgba($body-color, 0.75)
 
 .article-body
   font-size: 2rem
   line-height: 3.1rem
   p, ul
     margin-bottom: 3.1rem
+  p:last-child, ul:last-child
+    margin-bottom: 0
 
 .article-social
   font-size: 1.8rem
-  background-color: #f8f8f8
-  color: $text-muted
+  background-color: lighten($body-bg, 6.5%)
+  color: rgba($body-color, 0.75)
+  border-radius: $border-radius-base
   padding: 1rem 1.5rem
   margin-top: 3.8rem
   h4
@@ -69,16 +86,38 @@
 .author-avatar
   width: 82px
 
-.author-name
-  color: $gray
+.author-name,
+.author-name a
+  color: rgba($body-color, 0.875)
 
 .author-desc
-  font-size: 1.8rem
-  line-height: 2.8rem
-  color: $gray-light
+  // font-size: 1.8rem
+  // line-height: 2.8rem
+  color: rgba($body-color, 0.75)
 
 .comments
   margin-top: 6.4rem
 
 .fa-inline
   margin-right: 0.25rem
+
+.footer
+  background-color: $navbar-default-bg
+  text-shadow: #000 0px 1px 1px
+  border-top: 2px solid #fff
+  margin-top: 9.6rem
+  padding: 9.6rem 0em
+  font-size: 3.2rem
+
+.footer a, .footer em
+  text-decoration: none
+  color: #fff
+
+span.fin
+  font-size: 9.6rem
+  font-family: Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif
+  font-style: italic
+  display: block
+  text-align: center
+  margin-top: 9.6rem
+  line-height: 6.4rem /* adds nice top and bottom spacing */
