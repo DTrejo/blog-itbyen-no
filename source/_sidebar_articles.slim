@@ -1,9 +1,13 @@
+h3
+  | Recent Articles
+  a.pull-right href=atom_feed_url
+    | #{fa 'rss', 'fw'} Atom Feed
 ul.nav.nav-pills.nav-stacked
-  - max = 10
+  - max = 3
   - blog.articles[0...max].each do |article|
     li class=('active' if current_page.path == article.path)
       a href=article_url(article)
         = article.title
   - if blog.articles.length > max
-    li: a href=root_url
-      | #{fa 'plus', 'fw'} #{max - blog.articles.length} more
+    li: a href="/calendar.html"
+      | #{fa 'plus', 'fw'} #{blog.articles.length - max} more
