@@ -13,9 +13,8 @@ body
 
 .navbar
   box-shadow: inset 0 -20px 15px -20px #000
-  font-size: 2rem
-  line-height: 3.1rem
   border-bottom: 1px solid $navbar-default-color
+  padding: 2rem 0
 
 .navbar-header h1,
 .navbar-header h2
@@ -36,6 +35,22 @@ body
 
 .articles article
   margin-bottom: 6.4rem
+
+.articles article + article:before
+  content: "&"
+  font-size: 6.4rem
+  font-family: Baskerville, "Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",serif
+  font-style: italic
+  font-weight: normal
+  display: block
+  text-align: center
+  color: #999
+  /* careful if you change the background! */
+  color: rgba(0,0,0, .25)
+  line-height: 6.4rem
+  margin-bottom: 6.4rem
+  /* adds nice top and bottom spacing */
+
 .articles article:last-child
   margin-bottom: 0
 
@@ -112,7 +127,7 @@ footer
   padding: 9.6rem 0em
   font-size: 3.2rem
 
-footer a, footer em
+footer a, footer a:hover, footer em
   text-decoration: none
   color: #fff
 
