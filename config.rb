@@ -147,7 +147,7 @@ helpers do
   end
 
   def suggest_edit_article_url(article)
-    src_path = "#{article.path}.markdown.erb"
+    src_path = "source/#{article.path}.markdown.erb"
     "#{data.urls.source}/blob/master/#{src_path}"
   end
 
