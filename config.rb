@@ -16,8 +16,8 @@ activate :blog do |blog|
   blog.sources           = ':year-:month-:day-:title'
   blog.taglink           = 'tags/:tag.html'
   blog.layout            = 'article_layout'
-  blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
+  blog.summary_separator = %r((<p>READMORE</p>|READMORE))
+  blog.summary_length    = 250
 
   blog.year_link         = ':year.html'
   blog.month_link        = ':year/:month.html'
@@ -210,6 +210,13 @@ helpers do
     attr[:class] = (Array(attr[:class] || []) + ['fa'] + keys.map { |k| "fa-#{ERB::Util.html_escape(k)}" }).uniq * ' '
     %Q(<i #{attr_to_s attr}></i>).strip.html_safe
   end
+
+  def article_summary(article, length, ellipsis = '…')
+    summary = article.summary(length, ellipsis).strip
+    summary = summary[3..-5] if summary.end_with?('</p>')
+    summary
+  end
+
 end
 
 set :css_dir, 'stylesheets'
