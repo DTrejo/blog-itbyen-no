@@ -4,9 +4,10 @@
 * `middleman article TITLE` to generate a new article
 * `rake build` to test build
 * `rake publish` to publish (builds and pushes to gh-pages branch on origin
+
 #### Articles
 
-Articles are written in markdown and also processed with `<%= ERB %>`. Add `published: false` to the YAML bit in the beginning of the article to make it a draft. 
+Articles are written in markdown and also processed with `<%= ERB %>`. Add `published: false` to the YAML bit in the beginning of the article to make it a draft.
 
 #### Images
 
