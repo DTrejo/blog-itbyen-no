@@ -11,8 +11,10 @@ html
       = content_for?(:page_title) ? yield_content(:page_title) : data.blog.title
     - if (content_for?(:rel_canonical))
       link rel="canonical" href="#{yield_content(:rel_canonical)}"
-    meta name="keywords" content="#{yield_content(:meta_keywords)}"
-    meta name="description" content="#{yield_content(:meta_description)}"
+    - if (content_for?(:meta_keywords))
+      meta name="keywords" content="#{yield_content(:meta_keywords)}"
+    - if (content_for?(:meta_description))
+      - # meta name="description" content="#{yield_content(:meta_description)}"
 
     = stylesheet_link_tag 'application'
     link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"
