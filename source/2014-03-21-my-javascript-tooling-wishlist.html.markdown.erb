@@ -1,9 +1,8 @@
 ---
 title: My Javascript Tooling Wishlist
-date: 2014-03-14 07:06 CET
+date: 2014-03-21 07:06 CET
 tags: javascript, node.js, tools
 author: dtrejo
-published: true
 ---
 
 What follows is a wishlist of features I'd want in my perfect javascript
@@ -32,15 +31,15 @@ are HARD.
   - test fuzzer based on the inferred types, to easily up your code coverage
   - some kind of fuzzer pattern language that would allow you to automatically
     generate assertions to be used at the start of every function. assertions
-    would be removed before running in productions. this would help people
+    would be removed before running in production. This would help people
     using your code to find mistakes more quickly. (This one is going off into
     la la land. Not sure if I believe this would be useful enough).
 - visualization of your project's require dependency graph e.g. [tracegl][5]?, [yasiv npm visualization][6] via [substack's lxjs '13 talk][10]
 - visualization of which functions call other functions, along with a bird's eye
   view of your whole program
 - static analysis tool to find uncalled callbacks (`callback` `cb`, `next`,
-  `done`, etc)
-- static analysis tool to find dead code after `return`. e.g. [jshint?][7]
+  `done`, etc) e.g. [jshint][7]
+- static analysis tool to find dead code after `return`. e.g. [jshint][7]
 - static analysis tool that reminds you to do `return cb()`, so you never call
   callbacks twice.
 - auto npm install
@@ -86,7 +85,7 @@ are HARD.
 - code coverage e.g. [coverify for client side js][14]
   - highlight untested code in a really ugly color in your editor
     e.g. [DrScheme][9]
-- review and edit diffs side-by-side before pushing to master (or while fixing
+- review and **edit** diffs side-by-side before pushing to master (or while fixing
   conflicts)
   - use [Philip Zeyliger's git-vimdiff][13]
 
