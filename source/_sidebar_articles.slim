@@ -9,5 +9,5 @@ ul.nav.nav-pills.nav-stacked
       a href=article_url(article)
         = article.title
   - if blog.articles.length > max
-    li: a href="/calendar.html"
+    li: a href="/blog.html"
       | #{fa 'plus', 'fw'} #{blog.articles.length - max} more

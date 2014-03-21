@@ -12,13 +12,11 @@
   /   a.btn.btn-default.btn-sm href=suggest_edit_article_url(current_article)
   /     | #{glyphicon 'edit'} Suggest edit
 
-  p
-    |
-      Interested in leaving a comment? Keep scrolling for my email. I appreciate
-      non-troll comments. If your comment is very critical, it's likely that
-      I'll publish it anyway.
-
-  = partial 'sidebar'
+  / p
+  /   |
+  /     Interested in leaving a comment? Keep scrolling for my email. I appreciate
+  /     non-troll comments. If your comment is very critical, it's likely that
+  /     I'll publish it anyway.
 
   |
     <form action="https://tinyletter.com/dtrejo" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/dtrejo', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"
@@ -34,3 +32,6 @@
         <input class="form-control btn-success" type="submit" value="Subscribe"/>
       </p>
     </form>
+  br
+
+  = partial 'sidebar'
