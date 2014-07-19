@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style>
+    body {
+      width: 790px;
+      margin: 0 auto;
+      color: #333333;
+      font: 13px Helvetica, arial, freesans, clean, sans-serif;
+      line-height: 1.4;
+    }
+    /*
+      Thanks to https://github.com/rvagg/node-brucedown (MIT) by @rvagg for this
+      CSS, with some minor edits from inspecting github.com's CSS.
+    */
+    #readme {
+      background-color: #fff;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 30px;
+    }
+    #readme > *:first-child {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    #readme a, #readme a:visited {
+      color: #4183c4;
+      text-decoration: none;
+    }
+
+    #readme a:hover {
+      text-decoration: underline;
+    }
+    #readme p, #readme blockquote, #readme ul, #readme ol, #readme dl, #readme table, #readme pre {
+      margin: 15px 0;
+    }
+      #readme .markdown-body h1
+    , #readme .markdown-body h2
+    , #readme .markdown-body h3
+    , #readme .markdown-body h4
+    , #readme .markdown-body h5
+    , #readme .markdown-body h6 {
+      margin: 1em 0 15px;
+      padding: 0;
+      font-weight: bold;
+      line-height: 1.7;
+      cursor: text;
+      position: relative;
+    }
+
+    #readme h1 {
+      font-size: 2.5em;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #readme h2 {
+      font-size: 2em;
+      border-bottom: 1px solid #eee;
+    }
+
+    #readme img {
+      max-width: 100%;
+    }
+
+    #readme hr {
+      background: transparent url("/img/hr.png") repeat-x 0 0;
+      border: 0 none;
+      color: #ccc;
+      height: 4px;
+      padding: 0;
+    }
+
+    #readme table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    #readme tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    .markdown-body tr {
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    #readme td, #readme th {
+      border: 1px solid #ccc;
+      padding: 6px 13px;
+    }
+
+    #readme th {
+      font-weight: bold;
+    }
+
+    #readme blockquote {
+      border-left: 4px solid #ddd;
+      padding: 0 15px;
+      color: #777;
+    }
+
+    #readme blockquote > :last-child, #readme blockquote > :first-child {
+      margin-bottom: 0px;
+    }
+
+    pre, code {
+      font-family: 'UbuntuMono', monospace;
+      white-space: nowrap;
+      margin: 0 2px;
+      padding: 0px 5px;
+      border: 1px solid #eaeaea;
+      background-color: #f8f8f8;
+      border-radius: 3px;
+    }
+
+    pre > code {
+      white-space: pre;
+    }
+
+    pre {
+      overflow-x: auto;
+      white-space: pre;
+      padding: 10px;
+      line-height: 150%;
+      background-color: #f8f8f8;
+      border-color: #ccc;
+    }
+
+    pre code, pre tt {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      border: none;
+    }
+
+      .highlight .c
+    , .highlight .cm
+    , .highlight .cp
+    , .highlight .c1 {
+      color:#999988;
+      font-style:italic;
+    }
+
+    .highlight .err {
+      color:#a61717;
+      background-color:#e3d2d2
+    }
+
+      .highlight .o
+    , .highlight .gs
+    , .highlight .kc
+    , .highlight .kd
+    , .highlight .kn
+    , .highlight .kp
+    , .highlight .kr {
+      font-weight:bold
+    }
+
+    .highlight .cs {
+      color:#999999;
+      font-weight:bold;
+      font-style:italic
+    }
+
+    .highlight .gd {
+      color:#000000;
+      background-color:#ffdddd
+    }
+
+    .highlight .gd .x {
+      color:#000000;
+      background-color:#ffaaaa
+    }
+
+    .highlight .ge {
+      font-style:italic
+    }
+
+      .highlight .gr
+    , .highlight .gt {
+      color:#aa0000
+    }
+
+      .highlight .gh
+    , .highlight .bp {
+      color:#999999
+    }
+
+    .highlight .gi {
+      color:#000000;
+      background-color:#ddffdd
+    }
+
+    .highlight .gi .x {
+      color:#000000;
+      background-color:#aaffaa
+    }
+
+    .highlight .go {
+      color:#888888
+    }
+
+      .highlight .gp
+    , .highlight .nn {
+      color:#555555
+    }
+
+
+    .highlight .gu {
+      color:#800080;
+      font-weight:bold
+    }
+
+
+    .highlight .kt {
+      color:#445588;
+      font-weight:bold
+    }
+
+      .highlight .m
+    , .highlight .mf
+    , .highlight .mh
+    , .highlight .mi
+    , .highlight .mo
+    , .highlight .il {
+      color:#009999
+    }
+
+      .highlight .s
+    , .highlight .sb
+    , .highlight .sc
+    , .highlight .sd
+    , .highlight .s2
+    , .highlight .se
+    , .highlight .sh
+    , .highlight .si
+    , .highlight .sx
+    , .highlight .s1 {
+      color:#d14
+    }
+
+    .highlight .n {
+      color:#333333
+    }
+
+      .highlight .na
+    , .highlight .no
+    , .highlight .nv
+    , .highlight .vc
+    , .highlight .vg
+    , .highlight .vi
+    , .highlight .nb {
+      color:#0086B3
+    }
+
+    .highlight .nc {
+      color:#445588;
+      font-weight:bold
+    }
+
+    .highlight .ni {
+      color:#800080
+    }
+
+      .highlight .ne
+    , .highlight .nf {
+      color:#990000;
+      font-weight:bold
+    }
+
+    .highlight .nt {
+      color:#000080
+    }
+
+    .highlight .ow {
+      font-weight:bold
+    }
+
+    .highlight .w {
+      color:#bbbbbb
+    }
+
+    .highlight .sr {
+      color:#009926
+    }
+
+    .highlight .ss {
+      color:#990073
+    }
+
+    .highlight .gc {
+      color:#999;
+      background-color:#EAF2F5
+    }
+    @media print {
+      #input {
+        display: none;
+      }
+      #readme {
+        display: block;
+        position: static;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1><a href="https://github.com/DTrejo/ampline">DTrejo/ampline</a></h1>
+
+  <article id="readme"><h1 id="ampline">ampline</h1>
+<p>amp up your command line.</p>
+<p>assign variables to output from common commands</p>
+<p>a great complement to tab completion</p>
+<h3 id="-npm-g-install-ampline-"><code>npm -g install ampline</code></h3>
+<h3 id="show-not-tell">show not tell</h3>
+<p>A simple example:</p>
+<div class="highlight"><pre><span class="nv">$ </span>ls
+1 amp
+2 node_modules
+3 package.json
+4 readme.md
+5 screenshots
+
+<span class="nv">$ </span>cat 4
+<span class="c"># executes cat readme.md</span>
+TODO write a readme. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed <span class="k">do </span>eiusmod.
+
+<span class="nv">$ </span>amp <span class="nb">echo</span> <span class="s2">&quot;hi&quot;</span> &gt;&gt; 4
+<span class="c"># executes echo &quot;hi&quot; &gt;&gt; readme.md</span>
+
+<span class="nv">$ </span>gs <span class="c"># this is an alias that uses `amp`</span>
+1  M readme.md
+
+<span class="nv">$ </span>ga readme.md
+1 M  readme.md
+
+<span class="nv">$ </span>git commit -m <span class="s1">&#39;added hi to my readme.&#39;</span>
+</pre></div>
+
+<p>A more complicated example:</p>
+<p><img src="https://rawgithub.com/dtrejo/ampline/master/screenshots/screenshot.png" alt="screenshot"></p>
+<h2 id="basic-actions">basic actions</h2>
+<ul>
+<li><p>list the variables you have saved</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>amp
+</pre></div>
+
+</li>
+<li><p>expand the variables you have saved</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>amp vim 1 2 3-5
+</pre></div>
+
+</li>
+<li><p>run a command (step 1: expand variables, step 2: run command, step 3: each line
+that matches the <code>-p</code> regex will be saved to a variable)</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>amp -p <span class="s2">&quot;(.*)&quot;</span> ls -1
+  1 amp
+  2 node_modules
+  3 package.json
+  4 readme.md
+  5 screenshots
+
+  <span class="c"># let&#39;s view what the current variables are set to</span>
+  <span class="nv">$ </span>amp
+  <span class="nv">1</span> <span class="o">=</span> amp
+  <span class="nv">2</span> <span class="o">=</span> node_modules
+  <span class="nv">3</span> <span class="o">=</span> package.json
+  <span class="nv">4</span> <span class="o">=</span> readme.md
+  <span class="nv">5</span> <span class="o">=</span> screenshots
+</pre></div>
+
+</li>
+</ul>
+<h2 id="suggested-aliases">suggested aliases</h2>
+<p>Because you don&#39;t want to type <code>amp</code> all over the place.</p>
+<p>These are the aliases I use. Since I only just wrote this, there aren&#39;t that
+many. Based on these it shouldn&#39;t be too hard write/customize your own set of
+aliases.</p>
+<div class="highlight"><pre>    <span class="c"># give me variable saving!</span>
+    <span class="nb">alias </span><span class="nv">gs</span><span class="o">=</span><span class="s1">&#39;amp -p &quot;...(.*)<pre><code class="lang-sh"><codeblock id="5"></codeblock></code></pre>quot; git status -s&#39;</span>
+    <span class="nb">alias </span><span class="nv">gbr</span><span class="o">=</span><span class="s1">&#39;amp -p &quot; ? (?:remotes\\/)?(?:origin\\/)?(.*)<pre><code class="lang-sh"><codeblock id="5"></codeblock></code></pre>quot; git branch&#39;</span> <span class="c"># supports -a, -r flags</span>
+
+    <span class="nb">alias </span><span class="nv">l</span><span class="o">=</span><span class="s1">&#39;CLICOLOR_FORCE=1 amp -p &quot;(.*)&quot; ls -1&#39;</span>
+    <span class="nb">alias </span><span class="nv">find</span><span class="o">=</span><span class="s1">&#39;amp -p &quot;(.*)&quot; find&#39;</span>
+
+    <span class="c"># give me variable expansion!</span>
+    <span class="nb">alias </span><span class="nv">subl</span><span class="o">=</span><span class="s1">&#39;amp subl&#39;</span>
+    <span class="nb">alias </span><span class="nv">ga</span><span class="o">=</span><span class="s1">&#39;amp git add&#39;</span>
+    <span class="nb">alias </span><span class="nv">grm</span><span class="o">=</span><span class="s1">&#39;amp git rm&#39;</span>
+    <span class="nb">alias </span><span class="nv">gco</span><span class="o">=</span><span class="s1">&#39;amp git checkout&#39;</span>
+    <span class="nb">alias </span><span class="nv">gd</span><span class="o">=</span><span class="s1">&#39;amp git diff&#39;</span>
+    <span class="nb">alias </span><span class="nv">gdh</span><span class="o">=</span><span class="s1">&#39;amp git diff HEAD&#39;</span>
+    <span class="nb">alias </span><span class="nv">gunstage</span><span class="o">=</span><span class="s1">&#39;amp git unstage&#39;</span>
+    <span class="nb">alias </span><span class="nv">cat</span><span class="o">=</span><span class="s1">&#39;amp cat&#39;</span>
+    <span class="nb">alias </span><span class="nv">less</span><span class="o">=</span><span class="s1">&#39;amp less&#39;</span>
+    <span class="nb">alias </span><span class="nv">mocha</span><span class="o">=</span><span class="s1">&#39;amp mocha&#39;</span>
+</pre></div>
+
+</article>
+
+  <a href="https://github.com/DTrejo/ampline"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+</body>
+</html>
