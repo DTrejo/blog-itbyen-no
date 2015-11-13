@@ -14,7 +14,7 @@
 - wrap_layout :layout do
   article
     h1.article-title = current_article.title
-    p.article-date = render_date(current_article.date)
+    / p.article-date = render_date(current_article.date)
     .article-body = yield
   = partial 'social_share'
   = partial "authors/#{current_page.data.author}"

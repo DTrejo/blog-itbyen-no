@@ -3,9 +3,11 @@ pageable: true
 per_page: 10
 ---
 
-= partial 'pagination_top'
+/ = partial 'pagination_top'
 
-.articles
+h3 Go to <a href="https://dtrejo.com">dtrejo.com</a> and sign up for my newsletter.
+
+/ .articles
   - page_articles.each_with_index do |article, i|
     - current_resource.add_metadata article: article
     article
@@ -19,4 +21,4 @@ per_page: 10
 
   - current_resource.add_metadata article: nil
 
-= partial 'pagination_bottom'
+/ = partial 'pagination_bottom'
