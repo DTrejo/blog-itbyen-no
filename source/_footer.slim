@@ -10,7 +10,7 @@ footer
       br
       a href="http://twitter.com/ddtrejo" Twitter
       br
-      a#email title="david at this domain" Email
+      a#email href="#" title="david at this domain" Email
 
     / .col-md-6
       em Prototypes
@@ -27,3 +27,15 @@ footer
 
     span.fin.col-md-12.text-center
       a href="404.html" fin
+
+//- TODO upgrade this
+script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"
+javascript:
+  $(document).ready(function() {
+    // Show email to humans.
+    var me = 'david'
+    var atDomain = '@dtrejo.com'
+    $('a#email').click(function() {
+      $(this).attr('href', 'mailto:' + me + atDomain).text(me + atDomain)
+    })
+  })
