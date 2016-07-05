@@ -1,21 +1,20 @@
 .article-footer
 
   / .permalink
-  /   label.form-label.text-muted for='permalink-input'
-  /     ' permalink
-  /   input.input-sm.form-control.select-text-on-click id='permalink-input' type='text' value='#{article_url(current_article)}'
+    label.form-label.text-muted for='permalink-input'
+      ' permalink
+    input.input-sm.form-control.select-text-on-click id='permalink-input' type='text' value='#{article_url(current_article)}'
 
   / .twtr-share: a.twitter-share-button href="https://twitter.com/share" data-size='large' data-url="#{article_url(current_article)}" data-via=data.author.twitter data-lang="en"
-  /   | Tweet
+    | Tweet
 
   / .suggest-edit
   /   a.btn.btn-default.btn-sm href=suggest_edit_article_url(current_article)
   /     | #{glyphicon 'edit'} Suggest edit
 
-  / p
-  /   |
-  /     Interested in leaving a comment? Keep scrolling for my email. I appreciate
-  /     non-troll comments. If your comment is very critical, it's likely that
-  /     I'll publish it anyway.
+  h3 Need help hiring engineers? <a href="http://engineeroverflow.com">EngineerOverflow.com</a>
+  p
+    |
+      Get help from an engineer who knows what experienced engineers want out of their careers <span class="unicode">☛</span> <a href="http://engineeroverflow.com">EngineerOverflow.com</a>.
 
   / = partial 'sidebar'
